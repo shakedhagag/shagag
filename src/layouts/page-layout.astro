@@ -1,7 +1,6 @@
 ---
 import Layout from "./layout.astro";
 import Header from "@/components/header.astro";
-import HomeLink from "@/components/home-link.astro";
 ---
 
 <Layout>
@@ -9,9 +8,7 @@ import HomeLink from "@/components/home-link.astro";
     <Header />
   </slot>
 
-  <slot />
-
-  <footer class="mt-12">
-    <HomeLink />
-  </footer>
+  <main>
+    <slot />
+  </main>
 </Layout>
