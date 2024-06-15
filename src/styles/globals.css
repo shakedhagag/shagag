@@ -17,13 +17,13 @@
   :root {
     --text: rgba(255, 255, 255, 0.88);
     --title: white;
-    --bg: rgb(40, 44, 53);
+    --bg: rgb(0, 43, 54);
     --code-bg: #191d27;
     --link: #ffa7c4;
     --inlineCode-bg: rgba(115, 124, 153, 0.2);
     --inlineCode-text: #e6e6e6;
-    --pink: lab(81 32.36 -7.02);
-    --purple: lab(78 19.97 -36.75);
+    --pink: lab(76 -56 15);
+    --purple: lab(54 -16 -30);
   }
 }
 @property --myColor1 {
