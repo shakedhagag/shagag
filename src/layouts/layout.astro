@@ -3,20 +3,22 @@ import "@/styles/globals.css";
 import "@fontsource/merriweather";
 import { ViewTransitions } from "astro:transitions";
 import LoadingIndicator from "astro-loading-indicator/component";
+import Footer from "@/components/footer.astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/shagagfavico.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>shagag</title>
     <ViewTransitions />
     <LoadingIndicator color="#7e22ce" />
   </head>
   <body class="mx-auto max-w-2xl bg-[--bg] px-5 py-12 text-[--text]">
     <slot />
+    <Footer />
   </body>
 </html>
