@@ -35,6 +35,12 @@ importers:
       astro:
         specifier: ^4.10.2
         version: 4.10.2(typescript@5.4.5)
+      astro-loading-indicator:
+        specifier: ^0.5.0
+        version: 0.5.0(astro@4.10.2(typescript@5.4.5))
+      colorjs.io:
+        specifier: ^0.5.0
+        version: 0.5.0
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -807,6 +813,11 @@ packages:
     resolution: {integrity: sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==}
     hasBin: true
 
+  astro-loading-indicator@0.5.0:
+    resolution: {integrity: sha512-NU06AzJEzvlzXLac8ODFgHjzTDyaF/GV+nQQ7Rq21rCeSifhmLQu219lJukIUS0ySs4ySO4PAwcaHGClOSEufA==}
+    peerDependencies:
+      astro: ^4.0.0
+
   astro@4.10.2:
     resolution: {integrity: sha512-SBdkoOanPsxKlKVU4uu/XG0G7NYAFoqmfBtq9SPMJ34B7Hr1MxVdEugERs8IwYN6UaxdDVcqA++9PvH6Onq2cg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
@@ -935,6 +946,9 @@ packages:
   color@4.2.3:
     resolution: {integrity: sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==}
     engines: {node: '>=12.5.0'}
+
+  colorjs.io@0.5.0:
+    resolution: {integrity: sha512-qekjTiBLM3F/sXKks/ih5aWaHIGu+Ftel0yKEvmpbKvmxpNOhojKgha5uiWEUOqEpRjC1Tq3nJRT7WgdBOxIGg==}
 
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
@@ -3186,6 +3200,10 @@ snapshots:
 
   astring@1.8.6: {}
 
+  astro-loading-indicator@0.5.0(astro@4.10.2(typescript@5.4.5)):
+    dependencies:
+      astro: 4.10.2(typescript@5.4.5)
+
   astro@4.10.2(typescript@5.4.5):
     dependencies:
       '@astrojs/compiler': 2.8.0
@@ -3391,6 +3409,8 @@ snapshots:
       color-convert: 2.0.1
       color-string: 1.9.1
     optional: true
+
+  colorjs.io@0.5.0: {}
 
   comma-separated-tokens@2.0.3: {}
 
