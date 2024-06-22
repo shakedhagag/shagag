@@ -9,5 +9,5 @@ export default {
       sans: ["Merriweather", ...defaultTheme.fontFamily.sans],
     },
   },
-  plugins: [],
+  plugins: [require("@headlessui/react")],
 };

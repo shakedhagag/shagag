@@ -13,10 +13,15 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://example.com",
-  integrations: [mdx(), sitemap(), tailwind(), react(), icon()],
+  integrations: [
+    mdx(),
+    sitemap(),
+    tailwind(),
+    react({ include: ["**/react/*"] }),
+    icon(),
+  ],
   markdown: {
     rehypePlugins: [rehypeHeadingIds, rehypeAccessibleEmojis, rehypeKatex],
     remarkPlugins: [remarkToc, remarkMath],
   },
 });
-
