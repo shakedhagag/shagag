@@ -6,9 +6,18 @@ import Header from "@/components/Header.astro";
 <Layout>
   <slot name="header">
     <Header />
+    <h2 class="text-lg font-['Merriweather'] text-[--text]">
+      Welcome, My name is Shaked, and I'm a developer.
+    </h2>
   </slot>
 
   <main>
+    <br />
+    <h2
+      class="text-sm tracking-wider leading-loose uppercase text-white/45 font-bold font-sans"
+    >
+      posts
+    </h2>
     <slot />
   </main>
 </Layout>

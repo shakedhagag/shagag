@@ -13,7 +13,6 @@ const timeSinceFirstPost = today.valueOf() - new Date(2018, 10, 30).valueOf();
 const timeSinceThisPost = today.valueOf() - new Date(date).valueOf();
 const staleness = timeSinceThisPost / timeSinceFirstPost;
 
-// Choose a color based on staleness (this is just an example, adjust as needed)
 let darkLinkColor = staleness > 0.5 ? "text-[#083344]" : "text-[#A5F3FC]";
 ---
 
