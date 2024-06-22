@@ -1,5 +1,4 @@
 ---
-import Color from "colorjs.io";
 import "@fontsource/montserrat/900.css";
 
 interface Props {
@@ -9,26 +8,15 @@ interface Props {
 
 const { title, date } = Astro.props;
 
-let lightStart = new Color("lab(63 59.32 -1.47)");
-let lightEnd = new Color("lab(33 42.09 -43.19)");
-let lightRange = lightStart.range(lightEnd);
-let darkStart = new Color("lab(81 32.36 -7.02)");
-let darkEnd = new Color("lab(78 19.97 -36.75)");
-let darkRange = darkStart.range(darkEnd);
-let today = new Date();
-let timeSinceFirstPost = (
-  today.valueOf() - new Date(2018, 10, 30).valueOf()
-).valueOf();
-let timeSinceThisPost = (today.valueOf() - new Date(date).valueOf()).valueOf();
-let staleness = timeSinceThisPost / timeSinceFirstPost;
+const today = new Date();
+const timeSinceFirstPost = today.valueOf() - new Date(2018, 10, 30).valueOf();
+const timeSinceThisPost = today.valueOf() - new Date(date).valueOf();
+const staleness = timeSinceThisPost / timeSinceFirstPost;
+
+// Choose a color based on staleness (this is just an example, adjust as needed)
+let darkLinkColor = staleness > 0.5 ? "text-[#083344]" : "text-[#A5F3FC]";
 ---
 
-<h2
-  class="text-[28px] font-black text-[--lightLink] dark:text-[--darkLink] font-['Montserrat']"
-  style={{
-    "--lightLink": lightRange(staleness).toString(),
-    "--darkLink": darkRange(staleness).toString(),
-  }}
->
+<h2 class={`text-[28px] font-black ${darkLinkColor} font-['Montserrat']`}>
   {title}
 </h2>

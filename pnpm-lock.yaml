@@ -41,9 +41,6 @@ importers:
       '@headlessui/react':
         specifier: ^2.1.0
         version: 2.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@types/node':
-        specifier: ^20.14.8
-        version: 20.14.8
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -59,9 +56,6 @@ importers:
       astro-loading-indicator:
         specifier: ^0.5.0
         version: 0.5.0(astro@4.10.2(@types/node@20.14.8)(typescript@5.4.5))
-      colorjs.io:
-        specifier: ^0.5.0
-        version: 0.5.0
       katex:
         specifier: ^0.16.10
         version: 0.16.10
@@ -90,6 +84,9 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
     devDependencies:
+      '@types/node':
+        specifier: ^20.14.8
+        version: 20.14.8
       prettier:
         specifier: ^3.3.2
         version: 3.3.2
@@ -1130,9 +1127,6 @@ packages:
   color@4.2.3:
     resolution: {integrity: sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==}
     engines: {node: '>=12.5.0'}
-
-  colorjs.io@0.5.0:
-    resolution: {integrity: sha512-qekjTiBLM3F/sXKks/ih5aWaHIGu+Ftel0yKEvmpbKvmxpNOhojKgha5uiWEUOqEpRjC1Tq3nJRT7WgdBOxIGg==}
 
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
@@ -4043,8 +4037,6 @@ snapshots:
       color-convert: 2.0.1
       color-string: 1.9.1
     optional: true
-
-  colorjs.io@0.5.0: {}
 
   comma-separated-tokens@2.0.3: {}
 
