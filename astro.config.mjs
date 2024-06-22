@@ -16,6 +16,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind(), react(), icon()],
   markdown: {
     rehypePlugins: [rehypeHeadingIds, rehypeAccessibleEmojis, rehypeKatex],
-    remarkPlugins: [remarkToc, remarkMath]
-  }
+    remarkPlugins: [remarkToc, remarkMath],
+  },
 });
+
