@@ -2,6 +2,9 @@ import rss from "@astrojs/rss";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 export async function GET(context) {
+  const postImportResult = import.meta.glob("../content/posts/**/*.mdx", {
+    eager: true,
+  });
   const posts = Object.values(postImportResult);
   return rss({
     title: SITE_TITLE,
