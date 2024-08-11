@@ -42,9 +42,7 @@
     "prettier": "^3.3.2",
     "prettier-plugin-astro": "^0.14.0"
   },
-  "overrides": {
-    "astro-icon": {
-      "@iconify/tools": "^4.0.0"
-    }
+  "resolutions": {
+    "cheerio": "1.0.0-rc.12"
   }
 }
