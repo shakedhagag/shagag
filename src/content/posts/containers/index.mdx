@@ -1,0 +1,69 @@
+---
+title: "Containers"
+date: "2024-08-13"
+spoiler: "A simple introduction to containers"
+href: "container-intro"
+---
+
+import { YouTube } from "astro-embed";
+
+As a frontend developer, the concept of containers initially intimidated me. I thought it was a complex topic best left to the DevOps team. However, I've discovered that containers are essentially just a few Linux kernel features cleverly combined. Let's dive into this fascinating world and see how it's changed the way we deploy applications.
+
+## What Are Containers?
+
+While there's no single definition, we can think of containers as a way to use Linux kernel features to achieve isolation. It's simpler than you might think!
+
+## Bare Metal
+
+Remember when companies had their own physical servers? Let's take a nostalgic (and slightly horrifying) trip down memory lane:
+
+1. Need a new web server? Time to order physical hardware!
+2. Wait for shipping (and pray nothing gets damaged en route).
+3. Receive the servers and start the installation process.
+4. Set up the software, configure everything, and hope it works.
+
+But wait, there's more! You also needed a team of sysadmins and IT professionals to:
+
+- Handle drivers
+- Keep operating systems up to date
+- Replace failed components
+- Tackle network issues
+
+And let's not forget about the power bill! Between running the servers and keeping the server room cool, your electricity costs could skyrocket.
+
+Managing your own servers was a complex challenge that required an entire team and a significant budget. It's no wonder the industry was ready for a change!
+
+## Virtual Machines: The Next Step
+
+Virtual Machines (VMs) introduced a layer of abstraction between software and hardware. Instead of one Linux instance running on a computer, you can have multiple guest instances running inside a host instance.
+
+### Why use VMs?
+
+First, you can run multiple servers on one physical machine, easily spinning up new services as needed. Second, and more importantly, each VM can be completely isolated from others, enhancing security and resource management.
+
+However, these benefits come at a cost. Running an OS inside another OS is resource-intensive and can impact performance. VMs offer great features but are limited by hardware constraints.
+
+## The Cloud: VMs On-Demand
+
+The cloud revolutionized VM usage, allowing us to create instances with just a few clicks. Open an AWS account, spin up an EC2 instance, and deploy your app. You pay for pre-allocated memory and computing power, and can create as many VMs as you're willing to fund.
+
+However, challenges remain:
+
+- You're still managing machines, handling software, networking, provisioning, and updates.
+- Running guest OSs inside host OSs is resource-intensive and costly.
+
+Ideally, we'd run code directly on the host OS, avoiding the overhead of guest systems. This need paved the way for the next evolution in deployment technology.
+
+## Containers: The Best of Both Worlds
+
+Containers offer a game-changing solution. They provide the security and resource management benefits of VMs, but without the overhead of running entire operating systems.
+
+Key benefits:
+
+- Lightweight
+- Strong security boundaries (though not as robust as VMs)
+- Efficient resource utilization
+
+> R.I.P Anton IYKYK
+
+<YouTube id="https://www.youtube.com/watch?v=JESKjC0SzWE" />
