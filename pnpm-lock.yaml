@@ -35,6 +35,9 @@ importers:
       '@fec/remark-a11y-emoji':
         specifier: ^4.0.2
         version: 4.0.2
+      '@fontsource/ibm-plex-mono':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@fontsource/merriweather':
         specifier: ^5.0.13
         version: 5.0.13
@@ -515,6 +518,9 @@ packages:
 
   '@floating-ui/utils@0.2.2':
     resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==}
+
+  '@fontsource/ibm-plex-mono@5.1.0':
+    resolution: {integrity: sha512-XKsZNyRCj6tz8zlatHmniSoLVephMD5GQG2sXgcaEb8DkUO+O61r28uTlIMEZuoZXtP4c4STvL+KUlJM5jZOEg==}
 
   '@fontsource/merriweather@5.0.13':
     resolution: {integrity: sha512-V/UsU+5yceDICBUJJXWCT+6xf5YpLIVUHfUjBQ+NNbllIhe3zaVZ1f3t5+fNKwvBzKBDa3RNMCofAdW7uzw08Q==}
@@ -3424,6 +3430,8 @@ snapshots:
       tabbable: 6.2.0
 
   '@floating-ui/utils@0.2.2': {}
+
+  '@fontsource/ibm-plex-mono@5.1.0': {}
 
   '@fontsource/merriweather@5.0.13': {}
 

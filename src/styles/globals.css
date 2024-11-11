@@ -67,3 +67,7 @@
     text-wrap: balance;
   }
 }
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+}
