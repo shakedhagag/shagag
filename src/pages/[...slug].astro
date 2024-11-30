@@ -10,7 +10,7 @@ import "@fontsource/montserrat/900.css";
 export async function getStaticPaths() {
   const posts = (await Astro.glob(
     "../content/posts/**/*.mdx",
-  )) as MarkdownInstance<Frontmatter>[];
+  )) as unknown as MarkdownInstance<Frontmatter>[];
 
   return posts.map((post) => {
     const fileContent = fs.readFileSync(post.file, { encoding: "utf8" });
