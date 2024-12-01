@@ -28,7 +28,6 @@ export async function getStaticPaths() {
 }
 
 const { Content, frontmatter } = Astro.props.post;
-console.log(frontmatter);
 const { fileContent } = Astro.props;
 const words = getPostWords(fileContent);
 const readTime = readingTime(words);
