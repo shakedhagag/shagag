@@ -2,15 +2,22 @@
 import Layout from "./layout.astro";
 import Header from "@/components/Header.astro";
 import HomeLink from "@/components/home-link.astro";
+
+interface Props {
+  frontmatter?: {
+    title: string;
+    spoiler: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
 ---
 
-<Layout>
+<Layout frontmatter={frontmatter}>
   <slot name="header">
     <Header />
   </slot>
-
   <slot />
-
   <footer class="mt-12">
     <HomeLink />
   </footer>

@@ -5,6 +5,15 @@ import { ViewTransitions } from "astro:transitions";
 import LoadingIndicator from "astro-loading-indicator/component";
 import Footer from "@/components/Footer.astro";
 import "@fontsource/ibm-plex-mono";
+
+interface Props {
+  frontmatter?: {
+    title: string;
+    spoiler: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,12 +23,26 @@ import "@fontsource/ibm-plex-mono";
     <link rel="icon" type="image/svg+xml" href="/githubavatar.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>shagag</title>
-    <meta property="og:title" content="shagag" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://shagag.dev" />
+    <title>{frontmatter?.title || "shagag"}</title>
+    <meta property="og:title" content={frontmatter?.title || "shagag"} />
+    <meta property="og:type" content={frontmatter ? "article" : "website"} />
+    <meta property="og:url" content={Astro.url} />
     <meta property="og:image" content="https://shagag.dev/og-image.jpg" />
-    <meta property="og:description" content="shagag's personal blog" />
+    <meta
+      property="og:description"
+      content={frontmatter?.spoiler || "shagag's personal blog"}
+    />
+    <meta
+      name="description"
+      content={frontmatter?.spoiler || "shagag's personal blog"}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={frontmatter?.title || "shagag"} />
+    <meta
+      name="twitter:description"
+      content={frontmatter?.spoiler || "shagag's personal blog"}
+    />
+    <meta name="twitter:image" content="https://shagag.dev/og-image.jpg" />
     <ViewTransitions />
     <LoadingIndicator color="#7e22ce" />
   </head>
