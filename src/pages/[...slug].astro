@@ -58,7 +58,8 @@ const readTime = readingTime(words);
         word count：{words}
       </p>
       <p class="mt-2 text-[13px] text-gray-700 dark:text-gray-300/50">
-        estimated reading time：{readTime}minute
+        estimated reading time：{readTime}
+        {readTime === 1 ? `minute` : `minutes`}
       </p>
     </div>
     <div class="markdown mt-10">
