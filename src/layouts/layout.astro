@@ -4,6 +4,7 @@ import "@fontsource/merriweather";
 import { ClientRouter } from "astro:transitions";
 import LoadingIndicator from "astro-loading-indicator/component";
 import Footer from "@/components/Footer.astro";
+import "@fontsource-variable/inter";
 import "@fontsource/ibm-plex-mono";
 
 interface Props {
@@ -17,7 +18,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/githubavatar.png" />
@@ -46,7 +47,7 @@ const { frontmatter } = Astro.props;
     <ClientRouter />
     <LoadingIndicator color="#7e22ce" />
   </head>
-  <body class="mx-auto max-w-2xl bg-[--bg] px-5 py-12 text-[--text]">
+  <body class="mx-auto max-w-2xl bg-gray-1 px-5 py-12 text-[--text]">
     <slot />
     <Footer />
   </body>

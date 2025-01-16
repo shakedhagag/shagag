@@ -6,16 +6,9 @@ interface Props {
   date: string;
 }
 
-const { title, date } = Astro.props;
-
-const today = new Date();
-const timeSinceFirstPost = today.valueOf() - new Date(2018, 10, 30).valueOf();
-const timeSinceThisPost = today.valueOf() - new Date(date).valueOf();
-const staleness = timeSinceThisPost / timeSinceFirstPost;
-
-let darkLinkColor = staleness > 0.5 ? "text-[#083344]" : "text-[#A5F3FC]";
+const { title } = Astro.props;
 ---
 
-<h2 class={`text-[28px] font-black ${darkLinkColor} font-['Montserrat']`}>
+<h2 class={`text-[28px] font-black text-gray-12`}>
   {title}
 </h2>

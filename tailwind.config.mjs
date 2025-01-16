@@ -4,10 +4,22 @@ import defaultTheme from "tailwindcss/defaultTheme";
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        gray: getColorScale("gray"),
+      },
+    },
     fontFamily: {
-      sans: ["Merriweather", ...defaultTheme.fontFamily.sans],
+      sans: ["Inter", ...defaultTheme.fontFamily.sans],
     },
   },
   plugins: [require("@headlessui/react")],
 };
+
+function getColorScale(name) {
+  let scale = {};
+  for (let i = 1; i <= 12; i++) {
+    scale[i] = `var(--${name}-${i})`;
+  }
+  return scale;
+}
