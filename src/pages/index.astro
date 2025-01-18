@@ -13,13 +13,13 @@ posts.sort((a, b) => {
 ---
 
 <Layout>
-  <div class="relative -top-[10px] flex flex-col gap-8">
+  <div class="relative top-[20px] flex flex-col gap-8">
     {
       posts.map((item) => {
         return (
           <Link
             classList={[
-              "block scale-100 py-4 hover:scale-[1.005] active:scale-100",
+              "block scale-100 py-4 hover:scale-[1.005] active:scale-100 hover:bg-gray-5 px-4 rounded-md sm:py-3",
             ]}
             target="_self"
             href={"/" + item.frontmatter.href + "/"}
@@ -29,13 +29,6 @@ posts.sort((a, b) => {
                 title={item.frontmatter.title}
                 date={item.frontmatter.date}
               />
-              <p class="text-[13px] text-gray-700 dark:text-gray-300">
-                {new Date(item.frontmatter.date).toLocaleDateString("cn", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
-                })}
-              </p>
               <p class="mt-1">{item.frontmatter.spoiler}</p>
             </article>
           </Link>
