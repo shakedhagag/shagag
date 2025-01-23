@@ -16,7 +16,10 @@ posts.sort((a, b) => {
   <div class="relative top-[20px] flex flex-col gap-8">
     {
       posts
-        .filter((post) => post.frontmatter.href.startsWith("rust"))
+        .filter(
+          (post) =>
+            post.frontmatter.group && post.frontmatter.group.startsWith("rust"),
+        )
         .map((item) => {
           return (
             <Link

@@ -3,4 +3,5 @@ export interface Frontmatter {
   date: string;
   spoiler: string;
   href: string;
+  group?: string;
 }
