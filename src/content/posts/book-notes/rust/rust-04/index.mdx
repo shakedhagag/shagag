@@ -10,16 +10,20 @@ import { Image } from "astro:assets";
 import allocation from "./allocation.png";
 import allocation2 from "./allocation2.png";
 
-Ownership is a set of rules that governs how a Rust program manages memory.
+Ownership is one of Rust's most unique and important features - a set of rules that governs how a Rust program manages memory. Unlike other programming languages that use garbage collection or manual memory management, Rust uses a system of ownership with a set of rules that the compiler checks at compile time.
 
-## Rules
+## Core Ownership Rules
 
 - Each value in Rust has an Owner
 - There can only be one owner at a time
 - When the owner goes out of scope, the value will be dropped.
 
-> There is a difference between `string` type and `String` type. string is allocated on the stack, has a finite, known length while String is allocated on the heap, and is length is unknown to us at compile time.
-> `let s = String::from("hello")`
+> Important Note: There is a crucial difference between the `&str` (string slice) type and `String` type. A string slice is allocated on the stack and has a fixed, known length, while `String` is allocated on the heap and can grow or shrink at runtime. This is why we use `String` when we need a mutable string:
+
+```rust
+let s = String::from("hello"); // Heap-allocated String
+let str_slice = "hello";       // Stack-allocated string slice
+```
 
 ```rust
 let s = String::from("hello");
@@ -99,11 +103,11 @@ fn main(){
 }
 ```
 
-### The main idea:
+### The Key Takeaway:
 
-**Assigning a value to another variable, moves it. When a variable that includes data on the heap goes out of scope, the value will be cleaned up by drop unless ownership of the data has been moved to another variable.**
+**In Rust, assigning a value to another variable moves ownership. When a variable containing heap data goes out of scope, Rust automatically cleans up that memory using `drop` - unless the ownership was moved to another variable.**
 
-Unless... We use references and Borrowing
+This might seem restrictive, but Rust provides a powerful feature to work around this: References and Borrowing. Let's see how they work:
 
 ```rust
 fn main(){
@@ -148,9 +152,9 @@ This means that the change function will mutate the value it borrows.
 
 **We also cannot have a mutable reference while we have an immutable one to the same value**
 
-## The Slice Type
+## Understanding Slices
 
-_slices_ let you reference a contiguous sequence of elements in a collention rather than the whole collection. A slice is a kind of reference, so it does not have ownership.
+_Slices_ are a powerful Rust feature that let you reference a contiguous sequence of elements in a collection without taking ownership. They're particularly useful when you want to reference only a portion of a collection, like getting a word from a string or a subset of an array.
 
 ```rust
 let s = String::from("hello world");
