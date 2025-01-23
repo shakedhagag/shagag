@@ -57,7 +57,7 @@
 .markdown blockquote {
   @apply relative -left-2 -ml-4 mb-8 pl-4;
   font-style: italic;
-  border-left: 3px solid hsla(0, 0%, 0%, 0.9);
+  border-left: 3px solid var(--text);
   border-left-color: inherit;
   opacity: 0.8;
 }
