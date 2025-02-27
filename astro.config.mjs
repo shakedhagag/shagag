@@ -9,19 +9,20 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx"; // https://astro.build/config
 import icon from "astro-icon";
+import { remarkSandpack } from "remark-sandpack";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://shagag.dev/",
   integrations: [
+    react({ include: ["**/react/*"] }),
     mdx(),
     sitemap(),
     tailwind({ applyBaseStyles: false }),
-    react({ include: ["**/react/*"] }),
     icon(),
   ],
   markdown: {
     rehypePlugins: [rehypeHeadingIds, rehypeAccessibleEmojis, rehypeKatex],
-    remarkPlugins: [remarkToc, remarkMath],
+    remarkPlugins: [remarkToc, remarkMath, remarkSandpack],
   },
 });
