@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/page-layout.astro";
+import { StripeTabs } from "../components/react/stripe-tabs";
+---
+
+<Layout mainPage={false} subHeader="Components">
+  <div class="relative top-[20px] flex flex-col gap-8">
+    <StripeTabs client:visible />
+  </div>
+</Layout>
