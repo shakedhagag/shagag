@@ -24,4 +24,7 @@ export default defineConfig({
     rehypePlugins: [rehypeHeadingIds, rehypeAccessibleEmojis, rehypeKatex],
     remarkPlugins: [remarkToc, remarkMath],
   },
+  image: {
+    domains: ["raw.githubusercontent.com"],
+  },
 });
