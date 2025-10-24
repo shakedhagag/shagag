@@ -1,5 +1,4 @@
 import { defineCollection, z } from "astro:content";
-import { group } from "node:console";
 
 const blogCollection = defineCollection({
 	type: "content",
