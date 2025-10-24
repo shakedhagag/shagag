@@ -1,7 +1,7 @@
 export interface Frontmatter {
-  title: string;
-  date: string;
-  spoiler: string;
-  href: string;
-  group?: string;
+	title: string;
+	date: string;
+	spoiler: string;
+	href: string;
+	group?: string;
 }
