@@ -2,46 +2,52 @@
 import BlogLayout from "@/layouts/blog-layout.astro";
 import "@/styles/markdown.css";
 import type { Frontmatter } from "./types";
-import type { MarkdownInstance } from "astro";
 import fs from "node:fs";
 import { getPostWords, readingTime } from "@/utils/utils";
 import "@fontsource/montserrat/900.css";
+import type {
+  InferGetStaticParamsType,
+  InferGetStaticPropsType,
+  GetStaticPaths,
+} from "astro";
+import { getCollection, render } from "astro:content";
 
-export async function getStaticPaths() {
-  const posts = (await Astro.glob(
-    "../content/posts/**/*.mdx",
-  )) as unknown as MarkdownInstance<Frontmatter>[];
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("posts");
 
   return posts.map((post) => {
-    const fileContent = fs.readFileSync(post.file, { encoding: "utf8" });
+    // Extract the file path - it's relative from your glob pattern
 
     return {
       params: {
-        slug: post.frontmatter.href,
+        slug: post.slug,
       },
       props: {
         post,
-        fileContent,
       },
     };
   });
-}
+}) satisfies GetStaticPaths;
 
-const { Content, frontmatter } = Astro.props.post;
-const { fileContent } = Astro.props;
-const words = getPostWords(fileContent);
+type Params = InferGetStaticParamsType<typeof getStaticPaths>;
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { data, body } = post;
+const words = getPostWords(body);
 const readTime = readingTime(words);
 ---
 
-<BlogLayout frontmatter={frontmatter}>
+<BlogLayout frontmatter={data}>
   <article>
     <div class="flex justify-between">
       <h1 class="text-[30px] font-inter leading-[30px]">
-        {frontmatter.title}
+        {data.title}
       </h1>
       <p class="mb-6 text-right mt-2 text-[11px] dark:text-gray-300">
         {
-          new Date(frontmatter.date).toLocaleDateString("cn", {
+          new Date(data.date).toLocaleDateString("cn", {
             day: "2-digit",
             month: "2-digit",
             year: "numeric",

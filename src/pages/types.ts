@@ -4,4 +4,5 @@ export interface Frontmatter {
 	spoiler: string;
 	href: string;
 	group?: string;
+	customUrl?: string;
 }
